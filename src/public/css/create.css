@@ -1,0 +1,110 @@
+/* 全体レイアウト */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ナビゲーション */
+nav {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* フォーム全体 */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 商品画像セクション */
+.image-section {
+    text-align: center;
+}
+
+.image-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-control-file {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 入力フォームセクション */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 入力フィールド */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 季節のチェックボックス */
+.checkbox-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* ボタン */
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* バリデーションエラーメッセージ */
+.text-danger {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

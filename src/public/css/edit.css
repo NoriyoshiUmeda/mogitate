@@ -1,0 +1,91 @@
+/* 全体の設定 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 商品詳細のレイアウト */
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="file"] {
+    padding: 5px;
+}
+
+form textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* 商品画像のスタイル */
+.img-thumbnail {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* ボタンのスタイル */
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}

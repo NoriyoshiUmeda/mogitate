@@ -1,0 +1,30 @@
+html,body {
+    height: 100%;
+    /* ビューポート全体をカバー */
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    max-width: 1512px;
+        /* 幅を画面に収まるように調整 */
+        min-height: calc(100vh - 100px);
+        /* ヘッダーを除いた高さを確保 */
+        margin: 0 auto;
+        /* 水平方向の中央揃え */
+        padding: 20px;
+        box-sizing: border-box;
+        /* パディングを含めたサイズ計算 */
+}
+
+.header{
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.header .logo{
+    font-size:  24px;
+    font-weight: bold;
+    color: #f4a300;
+}
