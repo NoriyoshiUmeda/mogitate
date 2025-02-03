@@ -96,6 +96,10 @@ form {
     background-color: #6c757d;
     color: #fff;
     border: none;
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .btn-secondary:hover {
