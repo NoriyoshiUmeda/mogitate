@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('styles')
+<link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" >
 <link rel="stylesheet" href="{{ asset('css/create.css') }}">
 @endsection
 
@@ -46,7 +47,7 @@
                     @endforeach
                 </div>
                 @error('season') <p class="text-danger">{{ $message }}</p> @enderror
-            </div>
+                </div>
 
             <div class="form-group">
                 <label for="description">商品説明</label>

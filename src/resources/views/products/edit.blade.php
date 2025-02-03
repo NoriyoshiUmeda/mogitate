@@ -2,7 +2,9 @@
 
 @section('styles')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/edit.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" >
+<link rel="stylesheet" href="{{ asset('css/edit.css') }}"> 
+
 @endsection
 
 @section('content')
@@ -31,13 +33,13 @@
         <div>
             <div class="form-group">
                 <label for="name">商品名</label>
-                <input type="text" name="name" id="name" value="{{ old('name', $product->name) }}" class="form-control">
+                <input type="text" name="name" id="name" value="{{ old('name', $product->name) }}" class="form-control"  placeholder="商品名を入力">
                 @error('name') <p class="text-danger">{{ $message }}</p> @enderror
             </div>
 
             <div class="form-group">
                 <label for="price">値段</label>
-                <input type="number" name="price" id="price" value="{{ old('price', $product->price) }}" class="form-control">
+                <input type="text" name="price" id="price" value="{{ old('price', $product->price) }}" class="form-control" placeholder="値段を入力">
                 @error('price') <p class="text-danger">{{ $message }}</p> @enderror
             </div>
 
@@ -52,26 +54,31 @@
                     </label>
                     @endforeach
                 </div>
+                 @error('season') 
+                    <p class="text-danger">{{ $message }}</p> 
+                 @enderror
             </div>
 
             <div class="form-group">
                 <label for="description">商品説明</label>
-                <textarea name="description" id="description" class="form-control">{{ old('description', $product->description) }}</textarea>
+                <textarea name="description" id="description" class="form-control" placeholder="商品の説明を入力">{{ old('description', $product->description) }}</textarea>
                 @error('description') <p class="text-danger">{{ $message }}</p> @enderror
             </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-warning">変更を保存</button>
-                <a href="{{ route('products.index') }}" class="btn btn-secondary">戻る</a>
-            </div>
-        </div>
-    </form> <!-- ✅ 更新フォームをここで閉じる -->
-
-    <!-- ✅ 削除フォームを更新フォームの外に配置 -->
-    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="mt-3">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger">削除</button>
     </form>
+            <div class="form-group d-flex justify-content-between align-items-center">
+    <a href="{{ route('products.index') }}" class="btn btn-secondary">戻る</a>
+    <div class="button-group">
+        <button type="submit" class="btn btn-warning">変更を保存</button>
+        <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline-block">
+            @csrf
+            @method('DELETE')
+           <button type="submit" class="btn-danger">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+    削除
+        </button>
+         </form>
+    </div>
 </div>
-@endsection
