@@ -13,12 +13,16 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+# `storage` 以下すべてを無視
 /storage/*
-!/storage/app
-!/storage/app/public
+
+# ただし、必要なフォルダはGit管理対象にする
+!/storage/app/
+!/storage/app/public/
 !/storage/app/public/fruits-img/
-!storage/framework/
-!storage/framework/cache/
-!storage/framework/sessions/
-!storage/framework/views/
-!storage/logs/
+!/storage/framework/
+!/storage/framework/cache/
+!/storage/framework/sessions/
+!/storage/framework/views/
+!/storage/logs/
