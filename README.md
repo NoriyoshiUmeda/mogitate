@@ -49,7 +49,7 @@ php artisan db:seed
 - MySQL8.0.26
 
 ## ER図
-![alt](mogitate-er.png)
+![ER diagram](src/mogitate-er.png)
 
 ## URL
 - 開発環境：http://localhost/
