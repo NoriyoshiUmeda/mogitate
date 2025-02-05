@@ -57,7 +57,7 @@ class ProductController extends Controller
         $fileName = time() . '_' . $file->getClientOriginalName(); // 現在時刻 + 元のファイル名
         $filePath = $file->storeAs('fruits-img', $fileName, 'public'); // 指定ディレクトリに保存
         $product->image = $fileName; // データベースに保存
-    }
+         }
 
         $product->save(); // ここで保存
         $product->seasons()->attach($seasons); // 中間テーブルへ保存
@@ -97,7 +97,7 @@ class ProductController extends Controller
         $fileName = time() . '_' . $file->getClientOriginalName();
         $filePath = $file->storeAs('fruits-img', $fileName, 'public');
         $product->image =  $fileName;
-    }
+        }
 
         $product->save();
 
@@ -108,18 +108,18 @@ class ProductController extends Controller
     {
     $product = Product::findOrFail($productId);
 
-    // 画像の削除
-    if ($product->image && Storage::disk('public')->exists($product->image)) {
+        // 画像の削除
+        if ($product->image && Storage::disk('public')->exists($product->image)) {
         Storage::disk('public')->delete($product->image);
-    }
+        }
 
-    // 中間テーブルのデータも削除
-    $product->seasons()->detach();
+        // 中間テーブルのデータも削除
+        $product->seasons()->detach();
 
-    // 商品削除
-    $product->delete();
+        // 商品削除
+        $product->delete();
 
-    return redirect()->route('products.index')->with('success', '商品を削除しました');
+        return redirect()->route('products.index')->with('success', '商品を削除しました');
     }
 
 }
